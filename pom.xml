@@ -6,19 +6,28 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
    <artifactId>pythoncode</artifactId>
    <version>09.11</version>
    <packaging>jar</packaging>
-   
+   <repositories>
+   <repository>
+			<id>internal</id>
+			<name>Internal Repository</name>
+			<url>http://localhost:8081/nexus</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+    </repositories>
    <build>
    <directory>${project.basedir}/target</directory>
     <finalName>${project.artifactId}-${project.version}</finalName>
     <sourceDirectory>${project.basedir}/C:/Users/Ajay</sourceDirectory>
-    <scriptSourceDirectory>C:/Users/Ajay/Pom.xml</scriptSourceDirectory>
+    <scriptSourceDirectory>C:/Users/Ajay/py1</scriptSourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-          <executable>python</executable>
+          <executable>C:/Users/Ajay/AppData/Local/Programs/Python/Python35-32/python.exe</executable>
         </configuration>
       </plugin>
       <plugin>
@@ -28,7 +37,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
         <executions>
             <execution>
                 <configuration>
-                    <executable>python</executable>
+                    <executable>C:/Users/Ajay/AppData/Local/Programs/Python/Python35-32/python.exe</executable>
                     <workingDirectory>/Users/Ajay/Pom.xml</workingDirectory>
                     <arguments>
                         <argument>helloworld.py</argument>
@@ -58,13 +67,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
       <id>internal</id>
       <name>Internal Repository-releases</name>
       <url>
-      http://localhost:8081/repository/abc/
+      http://localhost:8081/repository/maven-releases/
 	  </url>
     </repository>
     <snapshotRepository>
       <id>internal</id>
       <name>Internal Repository-snapshots</name>
-     <url>http://localhost:8081/repository/xyz/</url>
+     <url>http://localhost:8081/repository/</url>
     </snapshotRepository>
   </distributionManagement>
 </project>
